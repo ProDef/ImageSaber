@@ -1,0 +1,12 @@
+<%= link_to "Saber Image", photos_new_path %>
+<p>
+	<% @photos.each do |photos| %>
+	<div class="photo">
+		<%= image_tag photos.image.url(:thumb), class: 'upload-image' %>
+		<%= photos.title %>
+
+	<% end %>
+</p>
+
+
+
