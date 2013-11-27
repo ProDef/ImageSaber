@@ -1,4 +1,5 @@
 Imagesaber::Application.routes.draw do
+  devise_for :users
   get "welcome/index"
   get "/photos/new"
   # get "/photos/show"
@@ -6,7 +7,8 @@ Imagesaber::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
   resources :photos
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
+
+  root 'photos#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

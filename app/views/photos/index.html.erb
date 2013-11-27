@@ -3,7 +3,7 @@
 	<% @photos.each do |photos| %>
 	<div class="photo">
 		<%= image_tag photos.image.url(:thumb), class: 'upload-image' %>
-		<%= photos.title %>
+		<h3><%= photos.title %></h3>
 
 	<% end %>
 </p>
