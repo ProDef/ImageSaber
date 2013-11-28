@@ -36,9 +36,19 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'capybara'
+gem 'twitter-bootstrap-rails',
+    github: 'seyhunak/twitter-bootstrap-rails',
+    branch: 'bootstrap3'
+
+group :test do
+	gem 'rspec-rails'
+	gem 'cucumber-rails'
+	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'selenium-webdriver'
+	gem "simplecov", :require => false
+	gem 'factory_girl_rails'
+    gem 'shoulda-matchers'
 end
 
 # Use ActiveModel has_secure_password

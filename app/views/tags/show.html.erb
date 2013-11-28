@@ -1,0 +1,10 @@
+
+<% @tag.photos.each do |photo| %>
+	<div class="photo">
+		<%= image_tag photo.image.url(:thumb), class: 'upload-image' %>
+		<h3><%= photo.title %></h3>
+		<p>Tags:
+		    <%= photo.tags.pluck(:tag_names).join(' ') %>
+	  </p>
+
+	<% end %>
