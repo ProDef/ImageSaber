@@ -28,7 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'paperclip', "~> 3.0"
-
+gem 'aws-sdk'
 gem "devise"
 
 group :doc do
@@ -50,6 +50,10 @@ group :test do
 	gem 'factory_girl_rails'
     gem 'shoulda-matchers'
 end
+
+group :production do
+    gem 'rails_12factor'
+ end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
