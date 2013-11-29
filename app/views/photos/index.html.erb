@@ -1,17 +1,18 @@
-<%= link_to "Saber Image", photos_new_path %>
-<p>
-	<% @photos.each do |photo| %>
-	<div class="photo">
-		<%= image_tag photo.image.url(:thumb), class: 'upload-image' %>
-		<h3><%= photo.title %></h3>
-		<p>Tags:
-		    <% photo.tags.each do |tag| %>
-		    	<%= link_to tag.tag_names, tag %>
-		    <% end %>
-	  </p>
-
+	<% @photos.in_groups_of(3, false).each do |three_photos| %>
+		<div class='row'>
+			<% three_photos.each do |photo| %>
+				<div class='col-md-4'>
+					<div class="photo">
+						<%= image_tag photo.image.url(:thumb), class: 'upload-image' %>
+						<h3><%= photo.title %></h3>
+						<p>Tags:
+						    <% photo.tags.each do |tag| %>
+						    	<%= link_to tag.tag_names, tag %>
+						    <% end %>
+						</p>
+					</div>
+				</div>
+			<% end %>
+		</div>
 	<% end %>
-</p>
-
-
-
+</div>
